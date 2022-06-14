@@ -1,19 +1,15 @@
-import React, { useContext } from "react";
-import Login from "./components/Login/Login";
-import Home from "./components/Home/Home";
-import MainHeader from "./components/MainHeader/MainHeader";
-import AuthContext from "./components/store/auth-context";
+import { Fragment } from "react";
+import Header from "./components/Layout/Header";
+import Meals from "./components/Meals/Meals";
 
 function App() {
-  const ctx = useContext(AuthContext);
   return (
-    <React.Fragment>
-      <MainHeader />
+    <Fragment>
+      <Header />
       <main>
-        {!ctx.isLoggedIn && <Login />}
-        {ctx.isLoggedIn && <Home />}
+        <Meals />
       </main>
-    </React.Fragment>
+    </Fragment>
   );
 }
 
